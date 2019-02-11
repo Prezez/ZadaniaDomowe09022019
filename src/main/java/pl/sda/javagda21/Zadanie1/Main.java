@@ -11,7 +11,7 @@ public class Main {
         DruzynaPilkarska manUtd = new DruzynaPilkarska("Manchester United", 10,18,3,5,2);
         DruzynaPilkarska wisla = new DruzynaPilkarska("Wisla",28,25,3,4,3);
         DruzynaPilkarska gornik = new DruzynaPilkarska("Gornik", 35,28,6,4,0);
-        DruzynaPilkarska zawisza = new DruzynaPilkarska("Zawisza", 57,3, 0,9,1);
+        DruzynaPilkarska zawisza = new DruzynaPilkarska("Zawisza", 57,3, 0,8,2);
         DruzynaPilkarska real = new DruzynaPilkarska("Real", 58, 3, 0, 9,1);
         DruzynaPilkarska barca = new DruzynaPilkarska("Barcelona", 58, 3, 0, 9,1);
 
