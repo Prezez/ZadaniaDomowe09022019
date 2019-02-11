@@ -12,14 +12,14 @@ public class DruzynaPilkarska {
     private int meczeZremisowane;
     private int liczbaPunktów;
 
-    public DruzynaPilkarska(String nazwa, int bramkiStracone, int bramkiTrafione, int meczeWygrane, int meczePrzegrane, int meczeZremisowane, int liczbaPunktów) {
+    public DruzynaPilkarska(String nazwa, int bramkiStracone, int bramkiTrafione, int meczeWygrane, int meczePrzegrane, int meczeZremisowane) {
         this.nazwa = nazwa;
         this.bramkiStracone = bramkiStracone;
         this.bramkiTrafione = bramkiTrafione;
         this.meczeWygrane = meczeWygrane;
         this.meczePrzegrane = meczePrzegrane;
         this.meczeZremisowane = meczeZremisowane;
-        this.liczbaPunktów = liczbaPunktów;
+        this.liczbaPunktów = meczeWygrane*3 + meczeZremisowane;
     }
 
     public String getNazwa() {
@@ -88,13 +88,12 @@ public class DruzynaPilkarska {
                 getMeczeWygrane() == that.getMeczeWygrane() &&
                 getMeczePrzegrane() == that.getMeczePrzegrane() &&
                 getMeczeZremisowane() == that.getMeczeZremisowane() &&
-                getLiczbaPunktów() == that.getLiczbaPunktów() &&
                 Objects.equals(getNazwa(), that.getNazwa());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getNazwa(), getBramkiStracone(), getBramkiTrafione(), getMeczeWygrane(), getMeczePrzegrane(), getMeczeZremisowane(), getLiczbaPunktów());
+        return Objects.hash(getNazwa(), getBramkiStracone(), getBramkiTrafione(), getMeczeWygrane(), getMeczePrzegrane(), getMeczeZremisowane());
     }
 
     @Override
