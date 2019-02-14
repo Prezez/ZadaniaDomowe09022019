@@ -2,12 +2,14 @@ package pl.sda.javagda21.KolkoIKrzyzyk;
 
 
 import java.util.Arrays;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(Integer[] args) {
         String[] tablica = new String[9];
         Scanner scanner = new Scanner(System.in);
+        Random random = new Random();
         int licznik = 0;
         int pozycja;
         String gracz;
@@ -28,7 +30,8 @@ public class Main {
 
             do {
                 System.out.println("Podaj pole w które chcesz wpisać swój symbol: (" + gracz + ")");
-                pozycja = scanner.nextInt();
+//                pozycja = scanner.nextInt();
+                pozycja= random.nextInt(9);
             } while (!czyNieZajete(tablica,pozycja));
 
             tablica[pozycja] = gracz;
@@ -40,11 +43,13 @@ public class Main {
 
             if (czyWygrana(tablica)) {
                 System.out.println("Wygrał gracz: " + gracz);
+                Testuj.KtoWygral(gracz);
                 return;
             }
             licznik++;
         }
         System.out.println("Gra skończyła się remisem");
+        Testuj.KtoWygral("R");
     }
 
     public static boolean czyWygrana(String[] tablicaWygranych) {
